@@ -1,0 +1,328 @@
+mysql> create table customers(
+    -> ID int,
+    -> Name varchar(20),
+    -> Age int,
+    -> Address varchar(30),
+    -> Salary int);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> Insert into customers values(1,'Ramesh',32,'Ahmedabad',2000.00),
+    -> (2,'Khlian',25,'Delhi',1500.00),
+    -> (3,'Chaitali', 25,'Mumbai',6500.00),
+    -> (4,'Kaushik',23,'Kota',2000.00),
+    -> (5,'Hardik',27,'Bhopal',8500.00),
+    -> (6,'Komal',22,'MP',4500.00),
+    -> (7,'Muffy',24,'Indore',10000.00);
+
+Here are simple examples showing usage of SQL Comparison Operators:
+
+Q. 1. Write the query to find salary greater than 5000.
+
+Select * from customers where salary > 5000; 
+
++------+----------+------+---------+--------+
+| ID   | Name     | Age  | Address | Salary |
++------+----------+------+---------+--------+
+|    3 | Chaitali |   25 | Mumbai  |   6500 |
+|    5 | Hardik   |   27 | Bhopal  |   8500 |
+|    7 | Muffy    |   24 | Indore  |  10000 |
++------+----------+------+---------+--------+             
+
+2. Write the query to find salary equal 2000.
+
+select * from  customers where salary = 2000;
+
++------+---------+------+-----------+--------+
+| ID   | Name    | Age  | Address   | Salary |
++------+---------+------+-----------+--------+
+|    1 | Ramesh  |   32 | Ahmedabad |   2000 |
+|    4 | Kaushik |   23 | Kota      |   2000 |
++------+---------+------+-----------+--------+    
+
+3. Write the query to find salary is not equal 2000.
+
+select * from customers where salary != 2000;
++------+----------+------+---------+--------+
+| ID   | Name     | Age  | Address | Salary |
++------+----------+------+---------+--------+
+|    2 | Khlian   |   25 | Delhi   |   1500 |
+|    3 | Chaitali |   25 | Mumbai  |   6500 |
+|    5 | Hardik   |   27 | Bhopal  |   8500 |
+|    6 | Komal    |   22 | MP      |   4500 |
+|    7 | Muffy    |   24 | Indore  |  10000 |
++------+----------+------+---------+--------+
+5 rows in set (0.00 sec)
+
+4. To find a list of customers salary not equal to 2000.
+
+SELECT * FROM CUSTOMERS WHERE SALARY <> 2000;
++------+----------+------+---------+--------+
+| ID   | Name     | Age  | Address | Salary |
++------+----------+------+---------+--------+
+|    2 | Khlian   |   25 | Delhi   |   1500 |
+|    3 | Chaitali |   25 | Mumbai  |   6500 |
+|    5 | Hardik   |   27 | Bhopal  |   8500 |
+|    6 | Komal    |   22 | MP      |   4500 |
+|    7 | Muffy    |   24 | Indore  |  10000 |
++------+----------+------+---------+--------+
+5 rows in set (0.00 sec)
+
+5. To find a list of customers whose salary is greater than or equal to 6500.
+
+SELECT * FROM CUSTOMERS WHERE SALARY >= 6500;
+
++------+----------+------+---------+--------+
+| ID   | Name     | Age  | Address | Salary |
++------+----------+------+---------+--------+
+|    3 | Chaitali |   25 | Mumbai  |   6500 |
+|    5 | Hardik   |   27 | Bhopal  |   8500 |
+|    7 | Muffy    |   24 | Indore  |  10000 |
++------+----------+------+---------+--------+
+
+Here are simple examples showing usage of SQL Comparison Operators: 
+
+Q. Write a query where age and salary are grater or equal 25 and 6500
+
+SELECT * FROM CUSTOMERS WHERE AGE >= 25 AND SALARY >= 6500;
+
++------+----------+------+---------+--------+
+| ID   | Name     | Age  | Address | Salary |
++------+----------+------+---------+--------+
+|    3 | Chaitali |   25 | Mumbai  |   6500 |
+|    5 | Hardik   |   27 | Bhopal  |   8500 |
++------+----------+------+---------+--------+  
+
+
+Q Write a query where age is not null.
+
+SELECT * FROM CUSTOMERS WHERE AGE IS NOT NULL;
+
++------+----------+------+-----------+--------+
+| ID   | Name     | Age  | Address   | Salary |
++------+----------+------+-----------+--------+
+|    1 | Ramesh   |   32 | Ahmedabad |   2000 |
+|    2 | Khlian   |   25 | Delhi     |   1500 |
+|    3 | Chaitali |   25 | Mumbai    |   6500 |
+|    4 | Kaushik  |   23 | Kota      |   2000 |
+|    5 | Hardik   |   27 | Bhopal    |   8500 |
+|    6 | Komal    |   22 | MP        |   4500 |
+|    7 | Muffy    |   24 | Indore    |  10000 |
++------+----------+------+-----------+--------+   
+.
+Q. Write a query where name starts with 'K'.
+
+SELECT * FROM CUSTOMERS WHERE NAME LIKE 'Ko%';
+
+Returns the rows where customer name starts with 'K'
+
++------+-------+------+---------+--------+
+| ID   | Name  | Age  | Address | Salary |
++------+-------+------+---------+--------+
+|    6 | Komal |   22 | MP      |   4500 |
++------+-------+------+---------+--------+
+
+Q. Write a query where age is 25 & 27. 
+
+SELECT * FROM CUSTOMERS WHERE AGE IN (25,27);
+
+Returns the customer rows with age between 25 and 27
+
++------+----------+------+---------+--------+
+| ID   | Name     | Age  | Address | Salary |
++------+----------+------+---------+--------+
+|    2 | Khlian   |   25 | Delhi   |   1500 |
+|    3 | Chaitali |   25 | Mumbai  |   6500 |
+|    5 | Hardik   |   27 | Bhopal  |   8500 |
++------+----------+------+---------+--------+
+3 rows in set (0.00 sec)
+
+Q.Write a query age between 25 & 27.
+
+SELECT * FROM CUSTOMERS WHERE AGE BETWEEN 25 AND 27;
++------+----------+------+---------+--------+
+| ID   | Name     | Age  | Address | Salary |
++------+----------+------+---------+--------+
+|    2 | Khlian   |   25 | Delhi   |   1500 |
+|    3 | Chaitali |   25 | Mumbai  |   6500 |
+|    5 | Hardik   |   27 | Bhopal  |   8500 |
++------+----------+------+---------+--------+    
+
+Q.  Write a query to display only age column whose salary is greater than 6500.
+
+SELECT AGE FROM CUSTOMERS  
+WHERE EXISTS (SELECT AGE FROM CUSTOMERS WHERE SALARY > 6500);
+ 
+# Returns only Age row with salary > 6500
+
++------+
+| AGE  |
++------+
+|   32 |
+|   25 |
+|   25 |
+|   23 |
+|   27 |
+|   22 |
+|   24 |
++------+  
+
+
+Q Write a query to display age of senior customer whose salary is greater than 6500.
+
+SELECT * FROM CUSTOMERS
+WHERE AGE > ALL (SELECT AGE FROM CUSTOMERS WHERE SALARY > 6500);
+
++------+--------+------+-----------+--------+
+| ID   | Name   | Age  | Address   | Salary |
++------+--------+------+-----------+--------+
+|    1 | Ramesh |   32 | Ahmedabad |   2000 |
++------+--------+------+-----------+--------+
+
+Q. Write a query to display customers table whose salary is greater than 6500.
+
+
+SELECT * FROM CUSTOMERS
+WHERE AGE > ANY (SELECT AGE FROM CUSTOMERS WHERE SALARY > 6500);
+
++------+----------+------+-----------+--------+
+| ID   | Name     | Age  | Address   | Salary |
++------+----------+------+-----------+--------+
+|    1 | Ramesh   |   32 | Ahmedabad |   2000 |
+|    2 | Khlian   |   25 | Delhi     |   1500 |
+|    3 | Chaitali |   25 | Mumbai    |   6500 |
+|    5 | Hardik   |   27 | Bhopal    |   8500 |
++------+----------+------+-----------+--------+
+4 rows in set (0.00 sec)
+
+SQL Expressions
+
+Here is simple example showing usage of SQL Boolean Expressions: 
+
+Q. Write a query where salary is equal to 10,000.
+
+SELECT * FROM CUSTOMERS WHERE SALARY = 10000;
+
++------+-------+------+---------+--------+
+| ID   | Name  | Age  | Address | Salary |
++------+-------+------+---------+--------+
+|    7 | Muffy |   24 | Indore  |  10000 |
++------+-------+------+---------+--------+
+1 row in set (0.00 sec)
+
+SQL - Numeric Expression: This expression is used to perform any mathematical operation in any query. Following is the syntax: 
+
+SELECT numerical_expression as  OPERATION_NAME 
+[FROM table_name 
+WHERE CONDITION] ; 
+
+Here numerical_expression is used for mathematical expression or any formula. Following is a simple examples 
+showing usage of SQL Numeric Expressions:
+
+SELECT (15 + 6) AS ADDITION;
++----------+
+| ADDITION |
++----------+
+|       21 |
++----------+  
+
+There are several built-in functions like avg(), sum(), count(), etc., to perform what is known as aggregate data 
+calculations against a table or a specific table column.
+
+Q. Write a query to know the count of records.
+
+SELECT COUNT(*) AS 'RECORDS' FROM CUSTOMERS; 
+
+# Here it display the no of records and record as col name.
+
++---------+
+| RECORDS |
++---------+
+|       7 |
++---------+  
+
+
+SQL - Date Expressions: Date Expressions return current system date and time values:
+
+SELECT CURRENT_TIMESTAMP; # Displays current data and time
+
++---------------------+
+| CURRENT_TIMESTAMP   |
++---------------------+
+| 2026-06-09 19:17:53 |
++---------------------+
+1 row in set (0.00 sec)  
+
+Another date query:
+
+SELECT GETDATE();; (GETDATE does not exist)
+
+CREATE / DROP /DATABASE
+
+CREATE DATABASE KRISH;
+
+mysql> CREATE DATABASE KRISH;
+Query OK, 1 row affected (0.05 sec)
+
+
+SHOW DATABASE KRISH;
+
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| krish              |
+| mysql              |
+| nit                |
+| performance_schema |
+| sys                |
++--------------------+
+
+DROP DATABASE KRISH;
+
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| nit                |
+| performance_schema |
+| sys                |
++--------------------+
+ 
+SQL SELECT Query:
+
+SQL SELECT Statement is used to fetch the data from a database table which returns data in the form of 
+result table. These result tables are called result-sets. 
+
+Q. display ID, NAME, SALARY from customer table.
+
+SELECT ID, NAME, SALARY FROM CUSTOMERS;
++------+----------+--------+
+| ID   | NAME     | SALARY |
++------+----------+--------+
+|    1 | Ramesh   |   2000 |
+|    2 | Khlian   |   1500 |
+|    3 | Chaitali |   6500 |
+|    4 | Kaushik  |   2000 |
+|    5 | Hardik   |   8500 |
+|    6 | Komal    |   4500 |
+|    7 | Muffy    |  10000 |
++------+----------+--------+  
+
+
+Q. Display whole customer table.
+
+SELECT * FROM CUSTOMERS;
++------+----------+------+-----------+--------+
+| ID   | Name     | Age  | Address   | Salary |
++------+----------+------+-----------+--------+
+|    1 | Ramesh   |   32 | Ahmedabad |   2000 |
+|    2 | Khlian   |   25 | Delhi     |   1500 |
+|    3 | Chaitali |   25 | Mumbai    |   6500 |
+|    4 | Kaushik  |   23 | Kota      |   2000 |
+|    5 | Hardik   |   27 | Bhopal    |   8500 |
+|    6 | Komal    |   22 | MP        |   4500 |
+|    7 | Muffy    |   24 | Indore    |  10000 |
++------+----------+------+-----------+--------+   
+
+
