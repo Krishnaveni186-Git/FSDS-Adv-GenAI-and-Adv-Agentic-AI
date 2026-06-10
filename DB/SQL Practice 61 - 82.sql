@@ -31,8 +31,8 @@ from customers
 where salary > 2000 or age < 25;
 
 ## Using Update Query
-## The SQL UPDATE Query is used to modify the existing records in a table. You can use WHERE clause with UPDATE query to update selected rows, 
-## otherwise all the rows would be affected. 
+## The SQL UPDATE Query is used to modify the existing records in a table. 
+  You can use WHERE clause with UPDATE query to update selected rows, otherwise all the rows would be affected. 
 
 # SET is used with UPDATE, not SELECT.
 
