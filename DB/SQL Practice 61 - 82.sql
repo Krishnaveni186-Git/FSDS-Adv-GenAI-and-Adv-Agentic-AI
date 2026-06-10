@@ -71,6 +71,27 @@ Insert into customers values(1,'Ramesh',32,'Ahmedabad',2000.00),
                             (5,'Hardik',27,'Bhopal',8500.00),
                             (6,'Komal',22,'MP',4500.00),
                             (7,'Muffy',24,'Indore',10000.00);
+Example: 
+Here are number of examples showing WHERE part having different LIKE clause with '%' and '_' operators:
+
+	Statement	             Description
+WHERE SALARY LIKE '200%'	Finds any values that start with 200
+WHERE SALARY LIKE '%200%'	Finds any values that have 200 in any position
+WHERE SALARY LIKE '_00%' 	Finds any values that have 00 in the second and third positions
+WHERE SALARY LIKE '2_%_%'	Finds any values that start with 2 and are at least 3 characters in length
+WHERE SALARY LIKE '%2'	        Finds any values that end with 2
+WHERE SALARY LIKE '_2%3'	Finds any values that have a 2 in the second position and end with a 3
+WHERE SALARY LIKE '2___3'	Finds any values in a five-digit number that start with 2 and end with 3
+
+  
+     Statement	                        Description
+WHERE SALARY LIKE '200%'	Finds any values that start with 200
+WHERE SALARY LIKE '%200%'	Finds any values that have 200 in any position
+WHERE SALARY LIKE '_00%'	Finds any values that have 00 in the second and third positions
+WHERE SALARY LIKE '2_%_%'	Finds any values that start with 2 and are at least 3 characters in length
+WHERE SALARY LIKE '%2'	        Finds any values that end with 2
+WHERE SALARY LIKE '_2%3'	Finds any values that have a 2 in the second position and end with a 3
+WHERE SALARY LIKE '2___3'	Finds any values in a five-digit number that start with 2 and end with 3
 
 select * from customers
 where salary like '200%';
