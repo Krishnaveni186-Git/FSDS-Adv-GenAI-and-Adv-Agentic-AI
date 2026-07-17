@@ -1,5 +1,0 @@
-# packages your project depends on
-streamlit
-pandas
-numpy
-scikit-learn
