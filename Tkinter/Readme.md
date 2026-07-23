@@ -37,12 +37,17 @@ button.pack()
 An event is an action performed by the user, such as clicking a button.
 
 def show_message():
+    
     name = entry.get()
+    
     label.config(text="Hello " + name)
 
 button = tk.Button(
+    
     window,
+    
     text="Submit",
+    
     command=show_message
 )
 button.pack()
@@ -55,10 +60,10 @@ This is very important.
 
 mainloop() continuously waits for user actions such as:
 
-Button click
-Keyboard input
-Mouse movement
-Closing the window
+- Button click
+- Keyboard input
+- Mouse movement
+- Closing the window
 
 **This is called event-driven programming**.
 
