@@ -21,12 +21,15 @@ window.geometry("400x300")
 Widgets are the components of a GUI.
 
 label = tk.Label(window, text="Enter your name")
+
 label.pack()
 
 entry = tk.Entry(window)
+
 entry.pack()
 
 button = tk.Button(window, text="Submit")
+
 button.pack()
 
 **3. Add an event**
