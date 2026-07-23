@@ -11,7 +11,9 @@ Tkinter works using **Python code + GUI widgets + event handling**.
 import tkinter as tk
 
 window = tk.Tk()
+
 window.title("My Application")
+
 window.geometry("400x300")
 
 **2. Add widgets**
